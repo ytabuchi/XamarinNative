@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1">
         <Button
-            android:id="@+id/mainAddButton"
+            android:id="@+id/customListViewAddButton"
             android:text="Add"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -19,7 +19,7 @@
             android:text="Delete"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/mainDeleteButton"
+            android:id="@+id/customListViewDeleteButton"
             android:layout_weight="1" />
     </LinearLayout>
     <ListView
@@ -27,5 +27,5 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/simpleListView" />
+        android:id="@+id/customListView" />
 </LinearLayout>

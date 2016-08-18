@@ -3,34 +3,31 @@
     p1:layout_width="match_parent"
     p1:layout_height="match_parent"
     p1:id="@+id/relativeLayout1">
+    <ImageView
+        p1:src="@drawable/Icon"
+        p1:layout_width="64dp"
+        p1:layout_height="64dp"
+        p1:paddingRight="8dp"
+        p1:paddingLeft="8dp"
+        p1:id="@+id/Image" />
     <TextView
         p1:text="Name"
         p1:textAppearance="?android:attr/textAppearanceLarge"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:id="@+id/Text1"
-        p1:paddingRight="32dp"
-        p1:paddingLeft="8dp"
-        p1:paddingTop="4dp"
-        p1:paddingBottom="4dp" />
+        p1:id="@+id/NameText"
+        p1:layout_toRightOf="@+id/Image"
+        p1:paddingTop="8dp"
+        p1:paddingRight="32dp" />
     <TextView
-        p1:text="UUID: "
-        p1:textAppearance="?android:attr/textAppearanceSmall"
-        p1:layout_width="match_parent"
-        p1:layout_height="wrap_content"
-        p1:layout_below="@id/Text1"
-        p1:id="@+id/Text2"
-        p1:paddingRight="32dp"
-        p1:paddingLeft="8dp" />
-    <TextView
-        p1:text="Property: "
+        p1:text="Age"
         p1:textAppearance="?android:attr/textAppearanceMedium"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:layout_below="@id/Text2"
-        p1:id="@+id/Text3"
-        p1:paddingRight="32dp"
-        p1:paddingLeft="8dp" />
+        p1:layout_toRightOf="@+id/Image"
+        p1:layout_below="@id/NameText"
+        p1:id="@+id/AgeText"
+        p1:paddingRight="32dp" />
     <TextView
         p1:text="&gt;"
         p1:textAppearance="?android:attr/textAppearanceMedium"
