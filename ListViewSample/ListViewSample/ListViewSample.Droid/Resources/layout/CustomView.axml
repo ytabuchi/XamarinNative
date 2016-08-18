@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/relativeLayout1">
+    <TextView
+        p1:text="Name"
+        p1:textAppearance="?android:attr/textAppearanceLarge"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/Text1"
+        p1:paddingRight="32dp"
+        p1:paddingLeft="8dp"
+        p1:paddingTop="4dp"
+        p1:paddingBottom="4dp" />
+    <TextView
+        p1:text="UUID: "
+        p1:textAppearance="?android:attr/textAppearanceSmall"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:layout_below="@id/Text1"
+        p1:id="@+id/Text2"
+        p1:paddingRight="32dp"
+        p1:paddingLeft="8dp" />
+    <TextView
+        p1:text="Property: "
+        p1:textAppearance="?android:attr/textAppearanceMedium"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:layout_below="@id/Text2"
+        p1:id="@+id/Text3"
+        p1:paddingRight="32dp"
+        p1:paddingLeft="8dp" />
+    <TextView
+        p1:text="&gt;"
+        p1:textAppearance="?android:attr/textAppearanceMedium"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/RightArrow"
+        p1:layout_alignParentRight="true"
+        p1:layout_centerVertical="true"
+        p1:padding="16dp" />
+</RelativeLayout>
