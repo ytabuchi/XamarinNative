@@ -12,6 +12,9 @@ using Android.Widget;
 
 namespace ListViewSample.Droid
 {
+    /// <summary>
+    /// セルのViewにSimpleListItem1を使用するListViewのサンプルです。
+    /// </summary>
     [Activity(Label = "SimpleListItem1")]
     public class SimpleListItem1Activity : Activity
     {
@@ -25,9 +28,10 @@ namespace ListViewSample.Droid
 
             listView = FindViewById<ListView>(Resource.Id.simpleListView);
 
+            // ListViewのAdapterを用意
             simpleAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1);
             simpleAdapter.Add("item_1");
-
+            // Adapterを適用
             listView.Adapter = simpleAdapter;
 
             listView.ItemClick += OnListItemClick;
@@ -36,7 +40,7 @@ namespace ListViewSample.Droid
             addButton.Click += (sender, e) =>
             {
                 var rdm = new Random();
-
+                // Adapterに対してstringを追加
                 simpleAdapter.Insert("item_" + rdm.Next(), 0);
             };
 
@@ -45,6 +49,7 @@ namespace ListViewSample.Droid
             {
                 if (simpleAdapter.Count > 0)
                 {
+                    // Adapterの最後のアイテムをRemove
                     var item = simpleAdapter.GetItem(simpleAdapter.Count - 1);
                     simpleAdapter.Remove(item);
                 }
@@ -54,6 +59,7 @@ namespace ListViewSample.Droid
         private void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             var listView = sender as ListView;
+            // Adapter内にデータがあるので、タップ行のデータをGetItemで取得
             var t = simpleAdapter.GetItem(e.Position).ToString();
             Toast.MakeText(this, t, ToastLength.Short).Show();
             Console.WriteLine("Clicked on " + t);

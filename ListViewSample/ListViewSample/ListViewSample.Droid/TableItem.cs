@@ -12,11 +12,13 @@ using Android.Widget;
 
 namespace ListViewSample.Droid
 {
+    /// <summary>
+    /// BaseAdapter<T>ÇÃå^Ç≈Ç∑ÅB
+    /// </summary>
     public class TableItem
     {
         public string Name { get; set; }
         public string Description { get; set; }
         public int ImageResourceId { get; set; }
-
     }
 }

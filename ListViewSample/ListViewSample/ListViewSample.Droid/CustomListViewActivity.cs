@@ -12,6 +12,9 @@ using Android.Widget;
 
 namespace ListViewSample.Droid
 {
+    /// <summary>
+    /// セルのViewにCustomViewを使用するListViewのサンプルです。
+    /// </summary>
     [Activity(Label = "CustomView")]
     public class CustomListViewActivity : Activity
     {
@@ -25,6 +28,7 @@ namespace ListViewSample.Droid
 
             listView = FindViewById<ListView>(Resource.Id.customListView);
 
+            // Randomで参照するため、ResourceIdの配列を用意
             int[] images =
             {
                 Resource.Drawable.ramen1,
@@ -38,8 +42,15 @@ namespace ListViewSample.Droid
                 Resource.Drawable.ramen9
             };
 
-            tableItem.Insert(0, new TableItem() { Name = "item_1", Description = "Description_1", ImageResourceId = images[4] });
+            // ソースのListにアイテムを追加
+            tableItem.Insert(0, new TableItem()
+            {
+                Name = "item_1",
+                Description = "Description_1",
+                ImageResourceId = images[4]
+            });
 
+            // CustomAdapterを作成して適用
             var customAdapter = new CustomListAdapter(this, tableItem);
             listView.Adapter = customAdapter;
 
@@ -49,6 +60,7 @@ namespace ListViewSample.Droid
             addButton.Click += (sender, e) =>
             {
                 var rdm = new Random();
+                // ソースのListにアイテムを追加し、Adapterに変更を通知して画面を更新させる
                 tableItem.Insert(0, new TableItem() { Name = "item_" + rdm.Next(), Description = "Description_" + rdm.Next(), ImageResourceId = images[rdm.Next(0, 8)] });
                 customAdapter.NotifyDataSetChanged();
 
@@ -59,6 +71,7 @@ namespace ListViewSample.Droid
             {
                 if (tableItem.Count > 0)
                 {
+                    // ソースのListからアイテムを削除し、Adapterに変更を通知して画面を更新させる
                     tableItem.Remove(tableItem[tableItem.Count - 1]);
                     customAdapter.NotifyDataSetChanged();
                 }
@@ -68,6 +81,7 @@ namespace ListViewSample.Droid
         private void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             var listView = sender as ListView;
+            // ソースのアイテムを参照するだけでOK
             var t = tableItem[e.Position];
             Android.Widget.Toast.MakeText(this, t.Name, Android.Widget.ToastLength.Short).Show();
             Console.WriteLine("Clicked on " + t.Name);
