@@ -12,12 +12,12 @@ using Android.Widget;
 
 namespace ListViewSample.Droid
 {
-    public class PersonListAdapter : BaseAdapter<PersonTableItem>
+    public class CustomListAdapter : BaseAdapter<TableItem>
     {
-        List<PersonTableItem> items;
+        List<TableItem> items;
         Activity context;
         
-        public PersonListAdapter(Activity context, List<PersonTableItem> items)
+        public CustomListAdapter(Activity context, List<TableItem> items)
         {
             this.context = context;
             this.items = items;
@@ -27,7 +27,7 @@ namespace ListViewSample.Droid
         {
             return position;
         }
-        public override PersonTableItem this[int position]
+        public override TableItem this[int position]
         {
             get { return items[position]; }
         }
@@ -44,7 +44,7 @@ namespace ListViewSample.Droid
             if (view == null) // no view to re-use, create new
                 view = context.LayoutInflater.Inflate(Resource.Layout.CustomView, null);
             view.FindViewById<TextView>(Resource.Id.NameText).Text = item.Name;
-            view.FindViewById<TextView>(Resource.Id.AgeText).Text = item.Age.ToString();
+            view.FindViewById<TextView>(Resource.Id.AgeText).Text = item.Description.ToString();
             view.FindViewById<ImageView>(Resource.Id.Image).SetImageResource(item.ImageResourceId);
 
             return view;

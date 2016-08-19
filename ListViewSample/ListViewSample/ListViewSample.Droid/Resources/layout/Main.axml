@@ -4,28 +4,14 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:padding="8dp">
-    <LinearLayout
-        android:orientation="horizontal"
+    <Button
+        android:text="SimpleListItem1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1">
-        <Button
-            android:id="@+id/mainAddButton"
-            android:text="Add"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-        <Button
-            android:text="Delete"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/mainDeleteButton"
-            android:layout_weight="1" />
-    </LinearLayout>
-    <ListView
-        android:minWidth="25px"
-        android:minHeight="25px"
+        android:id="@+id/button1" />
+    <Button
+        android:text="CustomView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/simpleListView" />
+        android:layout_height="wrap_content"
+        android:id="@+id/button2" />
 </LinearLayout>

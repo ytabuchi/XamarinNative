@@ -54,7 +54,25 @@ namespace ListViewSample.Droid
 			public const int ramen2 = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int ramen5 = 2130837507;
+			public const int ramen3 = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int ramen4 = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int ramen5 = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int ramen6 = 2130837510;
+			
+			// aapt resource value: 0x7f020007
+			public const int ramen7 = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int ramen8 = 2130837512;
+			
+			// aapt resource value: 0x7f020009
+			public const int ramen9 = 2130837513;
 			
 			static Drawable()
 			{
@@ -81,6 +99,12 @@ namespace ListViewSample.Droid
 			// aapt resource value: 0x7f050008
 			public const int RightArrow = 2131034120;
 			
+			// aapt resource value: 0x7f050009
+			public const int button1 = 2131034121;
+			
+			// aapt resource value: 0x7f05000a
+			public const int button2 = 2131034122;
+			
 			// aapt resource value: 0x7f050003
 			public const int customListView = 2131034115;
 			
@@ -93,17 +117,17 @@ namespace ListViewSample.Droid
 			// aapt resource value: 0x7f050000
 			public const int linearLayout1 = 2131034112;
 			
-			// aapt resource value: 0x7f050009
-			public const int mainAddButton = 2131034121;
+			// aapt resource value: 0x7f05000b
+			public const int mainAddButton = 2131034123;
 			
-			// aapt resource value: 0x7f05000a
-			public const int mainDeleteButton = 2131034122;
+			// aapt resource value: 0x7f05000c
+			public const int mainDeleteButton = 2131034124;
 			
 			// aapt resource value: 0x7f050004
 			public const int relativeLayout1 = 2131034116;
 			
-			// aapt resource value: 0x7f05000b
-			public const int simpleListView = 2131034123;
+			// aapt resource value: 0x7f05000d
+			public const int simpleListView = 2131034125;
 			
 			static Id()
 			{
@@ -126,6 +150,9 @@ namespace ListViewSample.Droid
 			
 			// aapt resource value: 0x7f030002
 			public const int Main = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int SimpleListItem1 = 2130903043;
 			
 			static Layout()
 			{

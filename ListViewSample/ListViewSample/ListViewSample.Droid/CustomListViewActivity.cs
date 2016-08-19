@@ -12,10 +12,10 @@ using Android.Widget;
 
 namespace ListViewSample.Droid
 {
-    [Activity(Label = "CustomViewActivity")]
+    [Activity(Label = "CustomView")]
     public class CustomListViewActivity : Activity
     {
-        List<PersonTableItem> tableItem = new List<PersonTableItem>();
+        List<TableItem> tableItem = new List<TableItem>();
         ListView listView;
 
         protected override void OnCreate(Bundle bundle)
@@ -25,9 +25,23 @@ namespace ListViewSample.Droid
 
             listView = FindViewById<ListView>(Resource.Id.customListView);
 
-            tableItem.Add(new PersonTableItem() { Name = "Yoshito Tabuchi", Age = 41, ImageResourceId = Resource.Drawable.ramen1 });
+            int[] images =
+            {
+                Resource.Drawable.ramen1,
+                Resource.Drawable.ramen2,
+                Resource.Drawable.ramen3,
+                Resource.Drawable.ramen4,
+                Resource.Drawable.ramen5,
+                Resource.Drawable.ramen6,
+                Resource.Drawable.ramen7,
+                Resource.Drawable.ramen8,
+                Resource.Drawable.ramen9
+            };
 
-            listView.Adapter = new PersonListAdapter(this, tableItem);
+            tableItem.Insert(0, new TableItem() { Name = "item_1", Description = "Description_1", ImageResourceId = images[4] });
+
+            var customAdapter = new CustomListAdapter(this, tableItem);
+            listView.Adapter = customAdapter;
 
             listView.ItemClick += OnListItemClick;
 
@@ -35,14 +49,19 @@ namespace ListViewSample.Droid
             addButton.Click += (sender, e) =>
             {
                 var rdm = new Random();
-                tableItem.Add(new PersonTableItem() { Name = "Mr. sample", Age = 20 + rdm.Next(50), ImageResourceId = Resource.Drawable.ramen5 });
+                tableItem.Insert(0, new TableItem() { Name = "item_" + rdm.Next(), Description = "Description_" + rdm.Next(), ImageResourceId = images[rdm.Next(0, 8)] });
+                customAdapter.NotifyDataSetChanged();
 
             };
 
             var deleteButton = FindViewById<Button>(Resource.Id.customListViewDeleteButton);
             deleteButton.Click += (sender, e) =>
             {
-
+                if (tableItem.Count > 0)
+                {
+                    tableItem.Remove(tableItem[tableItem.Count - 1]);
+                    customAdapter.NotifyDataSetChanged();
+                }
             };
         }
 
