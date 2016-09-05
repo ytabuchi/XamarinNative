@@ -45,8 +45,8 @@ namespace ListViewSample.Droid
                 view = context.LayoutInflater.Inflate(Resource.Layout.CustomView, null);
 
             // BaseAdapter<T>の対応するプロパティを割り当て
-            view.FindViewById<TextView>(Resource.Id.NameText).Text = item.Name;
-            view.FindViewById<TextView>(Resource.Id.AgeText).Text = item.Description.ToString();
+            view.FindViewById<TextView>(Resource.Id.MainText).Text = item.Main;
+            view.FindViewById<TextView>(Resource.Id.SubText).Text = item.Sub;
             view.FindViewById<ImageView>(Resource.Id.Image).SetImageResource(item.ImageResourceId);
 
             return view;

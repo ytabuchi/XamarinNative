@@ -11,22 +11,22 @@
         p1:paddingLeft="8dp"
         p1:id="@+id/Image" />
     <TextView
-        p1:text="Name"
+        p1:text="Main"
         p1:textAppearance="?android:attr/textAppearanceLarge"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
-        p1:id="@+id/NameText"
+        p1:id="@+id/MainText"
         p1:layout_toRightOf="@+id/Image"
         p1:paddingTop="8dp"
         p1:paddingRight="32dp" />
     <TextView
-        p1:text="Age"
+        p1:text="Sub"
         p1:textAppearance="?android:attr/textAppearanceMedium"
         p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
         p1:layout_toRightOf="@+id/Image"
-        p1:layout_below="@id/NameText"
-        p1:id="@+id/AgeText"
+        p1:layout_below="@id/MainText"
+        p1:id="@+id/SubText"
         p1:paddingRight="32dp" />
     <TextView
         p1:text="&gt;"

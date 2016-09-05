@@ -17,8 +17,8 @@ namespace ListViewSample.Droid
     /// </summary>
     public class TableItem
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public string Main { get; set; }
+        public string Sub { get; set; }
         public int ImageResourceId { get; set; }
     }
 }

@@ -29,7 +29,7 @@ namespace ListViewSample.Droid
             listView = FindViewById<ListView>(Resource.Id.customListView);
 
             // Randomで参照するため、ResourceIdの配列を用意
-            int[] images =
+            int[] images = 
             {
                 Resource.Drawable.ramen1,
                 Resource.Drawable.ramen2,
@@ -45,8 +45,8 @@ namespace ListViewSample.Droid
             // ソースのListにアイテムを追加
             tableItem.Insert(0, new TableItem()
             {
-                Name = "item_1",
-                Description = "Description_1",
+                Main = "item_1",
+                Sub = "Description_1",
                 ImageResourceId = images[4]
             });
 
@@ -61,9 +61,13 @@ namespace ListViewSample.Droid
             {
                 var rdm = new Random();
                 // ソースのListにアイテムを追加し、Adapterに変更を通知して画面を更新させる
-                tableItem.Insert(0, new TableItem() { Name = "item_" + rdm.Next(), Description = "Description_" + rdm.Next(), ImageResourceId = images[rdm.Next(0, 8)] });
+                tableItem.Insert(0, new TableItem()
+                {
+                    Main = "item_" + rdm.Next(),
+                    Sub = "Description_" + rdm.Next(),
+                    ImageResourceId = images[rdm.Next(0, 8)]
+                });
                 customAdapter.NotifyDataSetChanged();
-
             };
 
             var deleteButton = FindViewById<Button>(Resource.Id.customListViewDeleteButton);
@@ -83,8 +87,8 @@ namespace ListViewSample.Droid
             var listView = sender as ListView;
             // ソースのアイテムを参照するだけでOK
             var t = tableItem[e.Position];
-            Android.Widget.Toast.MakeText(this, t.Name, Android.Widget.ToastLength.Short).Show();
-            Console.WriteLine("Clicked on " + t.Name);
+            Android.Widget.Toast.MakeText(this, t.Main, Android.Widget.ToastLength.Short).Show();
+            Console.WriteLine("Clicked on " + t.Main);
         }
     }
 }
