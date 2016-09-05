@@ -45,7 +45,7 @@ namespace ListViewSample.Droid
             // ソースのListにアイテムを追加
             tableItem.Insert(0, new TableItem()
             {
-                Main = "item_1",
+                Main = "Item_1",
                 Sub = "Description_1",
                 ImageResourceId = images[4]
             });
@@ -63,7 +63,7 @@ namespace ListViewSample.Droid
                 // ソースのListにアイテムを追加し、Adapterに変更を通知して画面を更新させる
                 tableItem.Insert(0, new TableItem()
                 {
-                    Main = "item_" + rdm.Next(),
+                    Main = "Item_" + rdm.Next(),
                     Sub = "Description_" + rdm.Next(),
                     ImageResourceId = images[rdm.Next(0, 8)]
                 });

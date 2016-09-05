@@ -30,7 +30,7 @@ namespace ListViewSample.Droid
 
             // ListView‚ÌAdapter‚ð—pˆÓ
             simpleAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1);
-            simpleAdapter.Add("item_1");
+            simpleAdapter.Add("Item_1");
             // Adapter‚ð“K—p
             listView.Adapter = simpleAdapter;
 
@@ -41,7 +41,7 @@ namespace ListViewSample.Droid
             {
                 var rdm = new Random();
                 // Adapter‚É‘Î‚µ‚Ästring‚ð’Ç‰Á
-                simpleAdapter.Insert("item_" + rdm.Next(), 0);
+                simpleAdapter.Insert("Item_" + rdm.Next(), 0);
             };
 
             var deleteButton = FindViewById<Button>(Resource.Id.mainDeleteButton);
